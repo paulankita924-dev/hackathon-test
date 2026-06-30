@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Tracker</title>
+    <style>
+        body { font-family: sans-serif; background: #121214; color: white; text-align: center; padding: 50px; }
+        .box { background: #202024; padding: 30px; border-radius: 8px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        h1 { color: #00e676; }
+        button { background: #00e676; border: none; padding: 10px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Live Bitcoin Price</h1>
+        <!-- This is a dynamic data placeholder requested by the rules -->
+        <p id="price">Click below to fetch live data...</p> 
+        <button onclick="fetchPrice()">Get Latest Price</button>
+    </div>
+
+    <script>
+        // This function talks to the internet to get real-time data
+        function fetchPrice() {
+            document.getElementById('price').innerText = "Fetching...";
+            
+            // Fetching dynamic data from a free internet database (API)
+            fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(res => res.json())
+            .then(data => {
+                // This updates the screen with real, live money data!
+                let livePrice = data.bpi.USD.rate;
+                document.getElementById('price').innerText = "$" + livePrice + " USD";
+            })
+            .catch(err => {
+                document.getElementById('price').innerText = "Error loading data.";
+            });
+        }
+    </script>
+</body>
+</html>
