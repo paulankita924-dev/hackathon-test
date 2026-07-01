@@ -1,8 +1,5 @@
-# 🚀 Crypto Terminal Dashboard
 
-A lightweight, full-stack cryptocurrency monitoring station featuring a glassmorphic user interface and an automated, real-time algorithmic price alerting rules engine.
-
-## ⚡ Features
+⚡ Features
 * **Dynamic CSS Grid Layout:** A sleek, fully responsive fintech dashboard built with modern Inter typography and glowing status indicators.
 * **Live Price Simulation Engine:** Micro-updates broadcasted every 3 seconds simulating organic market volatility.
 * **Algorithmic Alerts:** Active background observation loop matching user-deployed price thresholds against real-time data streams with immediate browser dispatch alerts.
